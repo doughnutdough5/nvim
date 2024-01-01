@@ -17,5 +17,4 @@ if not status then
     return
 end
 
--- plugins 폴더에 init.lua 없어도 잘 작동함.
 lazy.setup('plugins')
