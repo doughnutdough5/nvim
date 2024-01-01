@@ -11,9 +11,8 @@ return {
             if not status then return end
 
             treesitter.setup {
-                -- use :TSInstall <language> when needed
                 sync_install = false,
-                auto_install = false,
+                auto_install = true,
                 highlight = { enable = true },
                 autopairs = { enable = true },
                 autotag = { enable = true },
