@@ -15,7 +15,6 @@ return {
         vim.keymap.set('n', '<leader>tl', ':TodoLocList<cr>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>tt', ':TodoTelescope<cr>', { noremap = true, silent = true })
 
-
         todo.setup()
     end
 }
