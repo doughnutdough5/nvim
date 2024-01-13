@@ -17,7 +17,7 @@ return {
             if not status then return end
 
             mason_lspconfig.setup {
-                ensure_installed = { 'lua_ls', 'tsserver', 'pylsp', 'gopls' }
+                ensure_installed = { 'tsserver', 'pylsp', 'gopls' }
             }
         end
     },
@@ -28,9 +28,10 @@ return {
             local status, lspconfig = pcall(require, 'lspconfig')
             if not status then return end
 
-            lspconfig.lua_ls.setup {}
-            lspconfig.tsserver.setup {}
-            lspconfig.pylsp.setup {}
+            local capabilities = require'cmp_nvim_lsp'.default_capabilities()
+
+            lspconfig.pylsp.setup { capabilities = capabilities }
+            lspconfig.tsserver.setup { capabilities = capabilities }
 
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
