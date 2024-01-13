@@ -4,7 +4,6 @@ return {
     },
     {
         'nvim-telescope/telescope.nvim',
-        -- load after vim initialize
         event = 'VimEnter',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
