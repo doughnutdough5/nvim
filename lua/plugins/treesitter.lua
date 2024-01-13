@@ -2,12 +2,10 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         -- build = ':TSUpdate',
-        -- load when new buffer create or before read exist buffer.
         event = { 'BufReadPre', 'BufNewFile' },
         cmd = { 'TSInstallInfo', 'TSInstall' },
         config = function()
             local status, treesitter = pcall(require, 'nvim-treesitter.configs')
-
             if not status then return end
 
             treesitter.setup {

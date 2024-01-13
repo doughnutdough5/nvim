@@ -7,10 +7,7 @@ return {
     event = 'VeryLazy',
     config = function()
         local status, tree = pcall(require, 'nvim-tree')
-
         if not status then return end
-
-        local opts = { noremap = true, silent = true }
 
         local function my_on_attach(bufnr)
             local api = require'nvim-tree.api'

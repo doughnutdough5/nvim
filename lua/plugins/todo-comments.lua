@@ -1,4 +1,4 @@
--- You can use this plugin to write keywords with colon
+-- You can use this plugin to put the colon after keywords
 -- TODO, HACK, WARN, PERF, NOTE, TEST
 return {
     'folke/todo-comments.nvim',
@@ -7,7 +7,6 @@ return {
     opts = {},
     config = function()
         local status, todo = pcall(require, 'todo-comments')
-
         if not status then return end
 
         vim.keymap.set('n', '<leader>tn', function() todo.jump_next() end, { noremap = true, silent = true, desc = 'Next todo comment' })
