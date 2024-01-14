@@ -23,7 +23,6 @@ return {
             formatting = {
                 format = require'lspkind'.cmp_format {
                     mode = 'symbol_text',
-                    -- mode = 'text_symbol',
                     menu = ({
                         buffer = '[Buffer]',
                         nvim_lsp = '[LSP]',
