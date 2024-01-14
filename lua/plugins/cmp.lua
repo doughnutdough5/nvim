@@ -23,11 +23,6 @@ return {
             formatting = {
                 format = require'lspkind'.cmp_format {
                     mode = 'symbol_text',
-                    menu = ({
-                        buffer = '[Buffer]',
-                        nvim_lsp = '[LSP]',
-                        luasnip = '[LuaSnip]',
-                    }),
                 },
             },
             snippet = {
@@ -40,8 +35,8 @@ return {
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert {
-                ['<c-d>'] = cmp.mapping.scroll_docs(-4),
-                ['<c-f>'] = cmp.mapping.scroll_docs(4),
+                ['<c-f>'] = cmp.mapping.scroll_docs(-4),
+                ['<c-d>'] = cmp.mapping.scroll_docs(4),
                 ['<c-space>'] = cmp.mapping.complete(),
                 ['<cr>'] = cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Replace,
