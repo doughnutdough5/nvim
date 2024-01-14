@@ -23,8 +23,8 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.wrap = true
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
--- vim.opt.wildmenu = true
--- vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.wildmenu = true
+vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.clipboard = { 'unnamed', 'unnamedplus' }
 vim.opt.hidden = true
 vim.opt.history = 50

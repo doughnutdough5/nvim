@@ -1,4 +1,4 @@
-require'doughnutdough5.settings'
+require'doughnutdough5.opts'
 require'doughnutdough5.keymaps'
 require'doughnutdough5.plugins'
 

@@ -12,8 +12,7 @@ return {
             auto_scroll = true,
             start_in_insert = true,
             persist_size = true,
-            -- direction = 'tab'
-            direction = 'horizontal',
+            direction = 'float',
         }
     end
 }
