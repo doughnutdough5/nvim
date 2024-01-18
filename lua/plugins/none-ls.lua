@@ -8,9 +8,6 @@ return {
         null_ls.setup {
             sources = {
                 -- install formatter and linter from Mason
-                -- lua
-                null_ls.builtins.formatting.stylua,
-
                 -- javascript, typescript
                 -- null_ls.builtins.code_actions.eslint_d,
                 null_ls.builtins.formatting.prettier,
