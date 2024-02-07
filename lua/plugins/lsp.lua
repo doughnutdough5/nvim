@@ -37,12 +37,16 @@ return {
                 cmd = { 'typescript-language-server', '--stdio' },
             }
 
+            if vim.fn.has'win32' then
+                lspconfig.csharp_ls.setup { capabilities = capabilities }
+            end
+
             local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
             for type, icon in pairs(signs) do
                 local hl = 'DiagnosticSign' .. type
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-
             end
+
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
             vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, {})
