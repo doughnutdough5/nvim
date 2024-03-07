@@ -29,7 +29,7 @@ return {
             local status, lspconfig = pcall(require, 'lspconfig')
             if not status then return end
 
-            local capabilities = require'cmp_nvim_lsp'.default_capabilities()
+            local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
 
             lspconfig.lua_ls.setup { capabilities = capabilities }
             lspconfig.pylsp.setup { capabilities = capabilities }
@@ -37,10 +37,7 @@ return {
                 capabilities = capabilities,
                 cmd = { 'typescript-language-server', '--stdio' },
             }
-
-            if vim.fn.has'win32' then
-                lspconfig.csharp_ls.setup { capabilities = capabilities }
-            end
+            -- lspconfig.htmx.setup { capabilities = capabilities }
 
             local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
             for type, icon in pairs(signs) do
