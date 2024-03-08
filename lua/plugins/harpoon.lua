@@ -21,7 +21,7 @@ return {
         local keymap = vim.keymap
 
         keymap.set('n', '<leader>ha', harpoon_mark.add_file, opts)
-        keymap.set('n', '<leader>hm', harpoon_ui.toggle_quick_menu, opts)
+        keymap.set('n', '<leader>hl', harpoon_ui.toggle_quick_menu, opts)
 
         keymap.set('n', '<leader>h1', function() harpoon_ui.nav_file(1) end, opts)
         keymap.set('n', '<leader>h2', function() harpoon_ui.nav_file(2) end, opts)
