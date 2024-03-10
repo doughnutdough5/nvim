@@ -9,6 +9,8 @@ return {
         local status, tree = pcall(require, 'nvim-tree')
         if not status then return end
 
+        local keymap = vim.keymap
+
         local function my_on_attach(bufnr)
             local api = require'nvim-tree.api'
 
@@ -33,21 +35,21 @@ return {
             }
 
             for _, v in ipairs(key_list) do
-                vim.keymap.del('n', v, { buffer = bufnr })
+                keymap.del('n', v, { buffer = bufnr })
             end
 
             -- customize my own keymap
-            vim.keymap.set('n', 'K', api.node.show_info_popup, options('Info'))
-            vim.keymap.set('n', 'v', api.node.open.vertical, options('Open: Vertical Split'))
-            vim.keymap.set('n', 'h', api.tree.toggle_hidden_filter, options('Toggle Filter: Dotfiles'))
-            vim.keymap.set('n', 'r', api.fs.rename_sub, options('Rename: Omit Filename'))
-            vim.keymap.set('n', 'R', api.tree.reload, options('Refresh tree'))
-            vim.keymap.set('n', 'x', api.fs.cut, options('Cut'))
-            vim.keymap.set('n', 'p', api.fs.paste, options('Paste'))
+            keymap.set('n', 'K', api.node.show_info_popup, options('Info'))
+            keymap.set('n', 'v', api.node.open.vertical, options('Open: Vertical Split'))
+            keymap.set('n', 'h', api.tree.toggle_hidden_filter, options('Toggle Filter: Dotfiles'))
+            keymap.set('n', 'r', api.fs.rename_sub, options('Rename: Omit Filename'))
+            keymap.set('n', 'R', api.tree.reload, options('Refresh tree'))
+            keymap.set('n', 'x', api.fs.cut, options('Cut'))
+            keymap.set('n', 'p', api.fs.paste, options('Paste'))
         end
 
         -- toggle key mapping
-        vim.keymap.set('n', '<c-n>', ':NvimTreeToggle<cr>', { noremap = true, silent = true })
+        keymap.set('n', '<c-n>', ':NvimTreeToggle<cr>', { noremap = true, silent = true })
 
         tree.setup {
             on_attach = my_on_attach,
