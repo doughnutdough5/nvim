@@ -39,9 +39,11 @@ return {
             -- customize my own keymap
             vim.keymap.set('n', 'K', api.node.show_info_popup, options('Info'))
             vim.keymap.set('n', 'v', api.node.open.vertical, options('Open: Vertical Split'))
-            vim.keymap.set('n', 'e', api.tree.expand_all, options('Expand All'))
             vim.keymap.set('n', 'h', api.tree.toggle_hidden_filter, options('Toggle Filter: Dotfiles'))
             vim.keymap.set('n', 'r', api.fs.rename_sub, options('Rename: Omit Filename'))
+            vim.keymap.set('n', 'R', api.tree.reload, options('Refresh tree'))
+            vim.keymap.set('n', 'x', api.fs.cut, options('Cut'))
+            vim.keymap.set('n', 'p', api.fs.paste, options('Paste'))
         end
 
         -- toggle key mapping
