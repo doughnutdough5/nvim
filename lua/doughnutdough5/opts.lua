@@ -13,8 +13,8 @@ opt.relativenumber = true
 opt.autoindent = true
 opt.smartindent = true
 opt.backup = false
-opt.showcmd = true
-opt.cmdheight = 1
+opt.showcmd = false
+opt.cmdheight = 0
 opt.laststatus = 2
 opt.scrolloff = 10
 opt.expandtab = true
@@ -35,4 +35,5 @@ opt.showmatch = true
 opt.wildoptions = 'pum'
 opt.pumblend = 5
 opt.termguicolors = true
+opt.shortmess:append { s = true, W = true, I = true, c = true }
 vim.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
