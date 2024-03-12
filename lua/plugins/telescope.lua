@@ -28,6 +28,7 @@ return {
             }
 
             vim.keymap.set('n', '<leader>ff', require'telescope.builtin'.find_files, {})
+            vim.keymap.set('n', '<leader>tt', require'telescope.builtin'.treesitter, {})
 
             telescope.load_extension'ui-select'
         end
